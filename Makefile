@@ -2,10 +2,13 @@
 
 all: add-nbo
 
-add-nbo:
-	gcc -o add-nbo add-nbo.c
+add-nbo: add-nbo.o
+
+	gcc -o add-nbo add-nbo.o
+
+add-nbo.o : add-nbo.c
 
 clean:
 	rm -f add-nbo
-	rm -f *.bin
+	rm -f *.o
 
